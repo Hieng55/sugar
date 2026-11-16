@@ -12,7 +12,7 @@
     box-sizing: border-box;
     padding-top: 154px !important;
   }
-  body.sugar-inner-page > footer .lumina-footer-container {
+  body.sugar-inner-page[data-page="contact"] > footer .lumina-footer-container {
     min-height: 100vh;
     box-sizing: border-box;
     padding-top: 154px !important;
@@ -20,7 +20,7 @@
   .sugar-header-nav a[aria-current="page"]::after { transform: scaleX(1); }
   @media (max-width: 767px) {
     body.sugar-inner-page > section { padding-top: 118px !important; }
-    body.sugar-inner-page > footer .lumina-footer-container { padding-top: 118px !important; }
+    body.sugar-inner-page[data-page="contact"] > footer .lumina-footer-container { padding-top: 118px !important; }
   }
 </style>
 </head><body class="sugar-inner-page" data-page="services">
@@ -1115,4 +1115,716 @@
 
 
 
+<footer class="lumina-footer-section" id="contact">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Forum&family=Jost:wght@300;400;500;600;700&display=swap');
+
+    .lumina-footer-section {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 8% 12%, rgba(234, 102, 28, 0.10), transparent 28%),
+        radial-gradient(circle at 88% 14%, rgba(255, 255, 255, 0.62), transparent 32%),
+        linear-gradient(180deg, #ffeac8 0%, #fbf8f2 48%, #ffeac8 100%);
+      font-family: 'Jost', sans-serif;
+      color: #ea661c;
+      isolation: isolate;
+    }
+
+    .lumina-footer-section * {
+      box-sizing: border-box;
+    }
+
+    .lumina-footer-section::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      left: -210px;
+      bottom: -210px;
+      border-radius: 50%;
+      background: rgba(234, 102, 28, 0.09);
+      filter: blur(58px);
+      pointer-events: none;
+      z-index: 0;
+      animation: luminaFooterOrbOne 8s ease-in-out infinite alternate;
+    }
+
+    .lumina-footer-section::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      right: -130px;
+      top: 70px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.58);
+      filter: blur(52px);
+      pointer-events: none;
+      z-index: 0;
+      animation: luminaFooterOrbTwo 9s ease-in-out infinite alternate;
+    }
+
+    .lumina-footer-bg-text {
+      position: absolute;
+      right: -14px;
+      top: 42px;
+      z-index: 0;
+      font-family: 'Forum', serif;
+      font-size: clamp(82px, 14vw, 220px);
+      line-height: 1;
+      color: rgba(234, 102, 28, 0.055);
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .lumina-footer-container {
+      position: relative;
+      z-index: 2;
+      width: min(1180px, calc(100% - 80px));
+      margin: 0 auto;
+      padding: 105px 0 34px;
+    }
+
+    .lumina-footer-top {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr 0.85fr 0.95fr;
+      gap: 34px;
+      align-items: start;
+      padding: 42px;
+      border-radius: 44px;
+      background: rgba(255, 255, 255, 0.32);
+      border: 1px solid rgba(234, 102, 28, 0.14);
+      box-shadow: 0 28px 80px rgba(234, 102, 28, 0.10);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .lumina-footer-brand {
+      min-width: 0;
+    }
+
+    .lumina-footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      text-decoration: none;
+      color: #ea661c;
+    }
+
+    .lumina-footer-logo-mark {
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #ea661c;
+      color: #ffeac8;
+      font-family: 'Forum', serif;
+      font-size: 25px;
+      letter-spacing: 1px;
+      box-shadow: 0 18px 36px rgba(234, 102, 28, 0.16);
+    }
+
+    .lumina-footer-logo-text strong {
+      display: block;
+      font-family: 'Forum', serif;
+      font-size: 31px;
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: -0.5px;
+      color: #ea661c;
+    }
+
+    .lumina-footer-logo-text span {
+      display: block;
+      margin-top: 5px;
+      font-size: 11px;
+      line-height: 1;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(234, 102, 28, 0.62);
+      font-weight: 500;
+    }
+
+    .lumina-footer-brand p {
+      max-width: 340px;
+      margin: 0;
+      color: rgba(234, 102, 28, 0.72);
+      font-size: 15px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .lumina-footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .lumina-footer-socials a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(234, 102, 28, 0.08);
+      border: 1px solid rgba(234, 102, 28, 0.14);
+      color: #ea661c;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition:
+        transform 0.45s cubic-bezier(.18, .78, .28, 1),
+        background 0.45s ease,
+        color 0.45s ease;
+    }
+
+    .lumina-footer-socials a:hover {
+      transform: translateY(-5px);
+      background: #ea661c;
+      color: #ffeac8;
+    }
+
+    .lumina-footer-col h3 {
+      position: relative;
+      margin: 0 0 22px;
+      padding-bottom: 13px;
+      font-family: 'Forum', serif;
+      color: #ea661c;
+      font-size: 29px;
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: -0.4px;
+    }
+
+    .lumina-footer-col h3::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 42px;
+      height: 1px;
+      background: rgba(234, 102, 28, 0.34);
+    }
+
+    .lumina-footer-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    .lumina-footer-links a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      color: rgba(234, 102, 28, 0.74);
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 400;
+      transition:
+        color 0.35s ease,
+        transform 0.35s ease;
+    }
+
+    .lumina-footer-links a::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(234, 102, 28, 0.34);
+      transition:
+        background 0.35s ease,
+        transform 0.35s ease;
+    }
+
+    .lumina-footer-links a:hover {
+      color: #ea661c;
+      transform: translateX(4px);
+    }
+
+    .lumina-footer-links a:hover::before {
+      background: #ea661c;
+      transform: scale(1.25);
+    }
+
+    .lumina-footer-contact-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .lumina-footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: rgba(234, 102, 28, 0.72);
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .lumina-footer-contact-icon {
+      flex: 0 0 auto;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(234, 102, 28, 0.08);
+      border: 1px solid rgba(234, 102, 28, 0.13);
+      color: #ea661c;
+      font-size: 14px;
+    }
+
+    .lumina-footer-contact-item a {
+      color: rgba(234, 102, 28, 0.72);
+      text-decoration: none;
+      transition: color 0.35s ease;
+    }
+
+    .lumina-footer-contact-item a:hover {
+      color: #ea661c;
+    }
+
+    .lumina-footer-hours {
+      display: grid;
+      gap: 10px;
+    }
+
+    .lumina-footer-hour-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(234, 102, 28, 0.11);
+      color: rgba(234, 102, 28, 0.72);
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 300;
+    }
+
+    .lumina-footer-hour-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .lumina-footer-hour-row span:first-child {
+      color: #ea661c;
+      font-weight: 500;
+    }
+
+    .lumina-footer-cta {
+      position: relative;
+      z-index: 2;
+      margin-top: 24px;
+      padding: 28px 34px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      background: #ea661c;
+      color: #ffeac8;
+      overflow: hidden;
+    }
+
+    .lumina-footer-cta::before {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(244, 239, 231, 0.28);
+      pointer-events: none;
+    }
+
+    .lumina-footer-cta-text {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      min-width: 0;
+    }
+
+    .lumina-footer-cta-icon {
+      flex: 0 0 auto;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(244, 239, 231, 0.12);
+      border: 1px solid rgba(244, 239, 231, 0.22);
+      font-size: 18px;
+      animation: luminaFooterPulse 1.9s ease-in-out infinite;
+    }
+
+    .lumina-footer-cta h3 {
+      margin: 0 0 4px;
+      font-family: 'Forum', serif;
+      font-size: 31px;
+      line-height: 1;
+      font-weight: 400;
+      color: #ffeac8;
+    }
+
+    .lumina-footer-cta p {
+      margin: 0;
+      color: rgba(244, 239, 231, 0.76);
+      font-size: 13px;
+      line-height: 1.45;
+      font-weight: 300;
+    }
+
+    .lumina-footer-cta-btn {
+      position: relative;
+      z-index: 2;
+      flex: 0 0 auto;
+      min-height: 52px;
+      padding: 0 28px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #ffeac8;
+      color: #ea661c;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 600;
+      transition:
+        transform 0.45s cubic-bezier(.18, .78, .28, 1),
+        box-shadow 0.45s ease;
+    }
+
+    .lumina-footer-cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+    }
+
+    .lumina-footer-bottom {
+      position: relative;
+      z-index: 2;
+      margin-top: 28px;
+      padding-top: 26px;
+      border-top: 1px solid rgba(234, 102, 28, 0.13);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: rgba(234, 102, 28, 0.62);
+      font-size: 13px;
+      line-height: 1.5;
+      font-weight: 300;
+    }
+
+    .lumina-footer-bottom a {
+      color: rgba(234, 102, 28, 0.72);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.35s ease;
+    }
+
+    .lumina-footer-bottom a:hover {
+      color: #ea661c;
+    }
+
+    @keyframes luminaFooterOrbOne {
+      from {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      to {
+        transform: translate3d(24px, -20px, 0) scale(1.06);
+      }
+    }
+
+    @keyframes luminaFooterOrbTwo {
+      from {
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+
+      to {
+        transform: translate3d(-22px, 18px, 0) scale(1.05);
+      }
+    }
+
+    @keyframes luminaFooterPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(244, 239, 231, 0.22);
+      }
+
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(244, 239, 231, 0);
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .lumina-footer-container {
+        width: calc(100% - 64px);
+        padding-top: 92px;
+      }
+
+      .lumina-footer-top {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 34px 28px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .lumina-footer-container {
+        width: calc(100% - 32px);
+        padding: 78px 0 28px;
+      }
+
+      .lumina-footer-bg-text {
+        top: 30px;
+        right: -10px;
+        font-size: 78px;
+      }
+
+      .lumina-footer-top {
+        grid-template-columns: 1fr;
+        padding: 28px;
+        border-radius: 32px;
+      }
+
+      .lumina-footer-logo {
+        align-items: flex-start;
+      }
+
+      .lumina-footer-logo-mark {
+        width: 56px;
+        height: 56px;
+        font-size: 23px;
+      }
+
+      .lumina-footer-logo-text strong {
+        font-size: 28px;
+      }
+
+      .lumina-footer-brand p {
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .lumina-footer-col h3 {
+        font-size: 27px;
+      }
+
+      .lumina-footer-cta {
+        margin-top: 20px;
+        border-radius: 30px;
+        padding: 24px;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .lumina-footer-cta::before {
+        border-radius: 24px;
+      }
+
+      .lumina-footer-cta-text {
+        align-items: flex-start;
+      }
+
+      .lumina-footer-cta h3 {
+        font-size: 27px;
+      }
+
+      .lumina-footer-cta-btn {
+        width: 100%;
+      }
+
+      .lumina-footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .lumina-footer-top {
+        padding: 24px;
+        border-radius: 28px;
+      }
+
+      .lumina-footer-logo-text strong {
+        font-size: 25px;
+      }
+
+      .lumina-footer-logo-text span {
+        font-size: 9px;
+        letter-spacing: 2.4px;
+      }
+
+      .lumina-footer-socials a {
+        width: 39px;
+        height: 39px;
+      }
+
+      .lumina-footer-hour-row {
+        font-size: 13px;
+      }
+
+      .lumina-footer-cta-text {
+        gap: 14px;
+      }
+
+      .lumina-footer-cta-icon {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .lumina-footer-section::before,
+      .lumina-footer-section::after,
+      .lumina-footer-cta-icon {
+        animation: none;
+      }
+
+      .lumina-footer-socials a,
+      .lumina-footer-links a,
+      .lumina-footer-links a::before,
+      .lumina-footer-cta-btn {
+        transition: none;
+      }
+    }
+  </style>
+
+  <div class="lumina-footer-bg-text">Sugar</div>
+
+  <div class="lumina-footer-container">
+    <div class="lumina-footer-top">
+      <div class="lumina-footer-brand">
+        <a href="index.html" class="lumina-footer-logo" aria-label="Sugar Nails">
+          <div style="overflow:hidden" class="lumina-footer-logo-mark">
+              <img style="width:100%; height:100%;" src="assets/sugar-nails-logo.webp"/>
+          </div>
+
+          <span class="lumina-footer-logo-text">
+            <strong>Sugar Nails</strong>
+            <span>Sweet Nail Care</span>
+          </span>
+        </a>
+
+        <p>
+          A sweet nail destination in Clemson for polished style, gentle care, and a finish that feels completely you.
+        </p>
+
+        <div class="lumina-footer-socials" aria-label="Social media links">
+          <a href="https://www.facebook.com/sugarnailsofclemson" target="_blank" rel="noopener" aria-label="Facebook">Fb</a>
+          <a href="https://www.instagram.com/sugarnailsclemson/" target="_blank" rel="noopener" aria-label="Instagram">Ig</a>
+          <a href="https://maps.app.goo.gl/vGYK1HBo8NUvC2ku5" target="_blank" rel="noopener" aria-label="Google Maps">G</a>
+        </div>
+      </div>
+
+      <div class="lumina-footer-col">
+  <h3>Explore</h3>
+
+  <div class="lumina-footer-links">
+    <a href="services.html">Services</a>
+    <a href="services.html">Manicure</a>
+    <a href="services.html">Pedicure</a>
+    <a href="services.html">Acrylic Nails</a>
+    <a href="services.html">Waxing</a>
+  </div>
+</div>
+
+      <div class="lumina-footer-col">
+        <h3>Visit Us</h3>
+
+        <div class="lumina-footer-contact-list">
+          <div class="lumina-footer-contact-item">
+            <span class="lumina-footer-contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin-icon lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <a
+              href="https://maps.app.goo.gl/vGYK1HBo8NUvC2ku5"
+              target="_blank"
+              rel="noopener"
+            >
+              906 Tiger Blvd #5,<br>
+              Clemson, SC 29631
+            </a>
+          </div>
+
+          <div class="lumina-footer-contact-item">
+            <span class="lumina-footer-contact-icon">☎</span>
+            <a href="tel:+18647651883">+1 864-765-1883</a>
+          </div>
+
+          <div class="lumina-footer-contact-item">
+            <span class="lumina-footer-contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chess-queen-icon lucide-chess-queen"><path d="M4 20a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1z"/><path d="m12.474 5.943 1.567 5.34a1 1 0 0 0 1.75.328l2.616-3.402"/><path d="m20 9-3 9"/><path d="m5.594 8.209 2.615 3.403a1 1 0 0 0 1.75-.329l1.567-5.34"/><path d="M7 18 4 9"/><circle cx="12" cy="4" r="2"/><circle cx="20" cy="7" r="2"/><circle cx="4" cy="7" r="2"/></svg></span>
+            <span>Sweet On Style - Gentle On You</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lumina-footer-col">
+        <h3>Hours</h3>
+
+        <div class="lumina-footer-hours">
+          <div class="lumina-footer-hour-row">
+            <span>Mon - Sat</span>
+            <span>9:00 AM - 7:00 PM</span>
+          </div>
+
+
+
+          <div class="lumina-footer-hour-row">
+            <span>Sunday</span>
+            <span>11:00 AM - 4:00 PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lumina-footer-cta">
+      <div class="lumina-footer-cta-text">
+        <span class="lumina-footer-cta-icon">✧</span>
+
+        <div>
+          <h3>Ready for your next beautiful set?</h3>
+          <p>Book your Sugar Nails visit and enjoy style with a gentle touch.</p>
+        </div>
+      </div>
+
+      <a href="https://sugarnailsofclemson6619.simplepos.us/new-home" target="_blank" rel="noopener" class="lumina-footer-cta-btn">Book Now</a>
+    </div>
+
+    <div class="lumina-footer-bottom">
+      <div>
+        © <span class="lumina-footer-year"></span> Sugar Nails. All rights reserved. · Designed by
+        <a href="https://tdtransactionsllc.com/" target="_blank" rel="noopener noreferrer">TD Transactions LLC</a>
+        · Developed by
+        <a href="https://webs4v.vn/" target="_blank" rel="noopener noreferrer">Webs4V</a>
+      </div>
+
+      <div>
+        Sweet On Style - Gentle On You
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const yearEl = document.querySelector(".lumina-footer-year");
+
+      if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+</footer>
 </body></html>
