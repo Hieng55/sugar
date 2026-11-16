@@ -3161,6 +3161,35 @@
     }
   </style>
 
+  <style>
+    .sugar-gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: none; gap: 18px; }
+    .sugar-gallery-item:nth-child(n) { display: block; grid-column: auto; grid-row: auto; aspect-ratio: 1 / 1; cursor: zoom-in; }
+    .sugar-gallery-item:focus-visible { outline: 3px solid #ea661c; outline-offset: 4px; }
+    .sugar-gallery-lightbox[hidden] { display: none; }
+    .sugar-gallery-lightbox { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; padding: 72px 92px; background: rgba(35, 18, 11, 0.92); backdrop-filter: blur(14px); }
+    .sugar-gallery-lightbox-image { display: block; width: auto; height: auto; max-width: min(1120px, 88vw); max-height: 82vh; object-fit: contain; border-radius: 24px; box-shadow: 0 30px 100px rgba(0, 0, 0, 0.46); }
+    .sugar-gallery-lightbox-close, .sugar-gallery-lightbox-nav { position: absolute; display: inline-flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.5); background: rgba(234, 102, 28, 0.76); color: #fff; cursor: pointer; transition: transform 0.25s ease, background 0.25s ease; }
+    .sugar-gallery-lightbox-close:hover, .sugar-gallery-lightbox-nav:hover { background: #ea661c; }
+    .sugar-gallery-lightbox-close { top: 24px; right: 28px; width: 52px; height: 52px; border-radius: 50%; font-size: 34px; line-height: 1; }
+    .sugar-gallery-lightbox-nav { top: 50%; width: 58px; height: 58px; border-radius: 50%; transform: translateY(-50%); font-size: 28px; }
+    .sugar-gallery-lightbox-nav:hover { transform: translateY(-50%) scale(1.06); }
+    .sugar-gallery-lightbox-prev { left: 24px; }
+    .sugar-gallery-lightbox-next { right: 24px; }
+    .sugar-gallery-lightbox-count { position: absolute; bottom: 24px; left: 50%; color: #fff; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; transform: translateX(-50%); }
+    @media (max-width: 700px) {
+      .sugar-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: none; gap: 12px; }
+      .sugar-gallery-item:nth-child(n) { grid-column: auto; grid-row: auto; aspect-ratio: 1 / 1; }
+      .sugar-gallery-lightbox { padding: 70px 16px; }
+      .sugar-gallery-lightbox-image { max-width: calc(100vw - 32px); max-height: 76vh; border-radius: 18px; }
+      .sugar-gallery-lightbox-close { top: 14px; right: 14px; width: 46px; height: 46px; }
+      .sugar-gallery-lightbox-nav { top: auto; bottom: 18px; width: 48px; height: 48px; transform: none; }
+      .sugar-gallery-lightbox-nav:hover { transform: scale(1.06); }
+      .sugar-gallery-lightbox-prev { left: 16px; }
+      .sugar-gallery-lightbox-next { right: 16px; }
+      .sugar-gallery-lightbox-count { bottom: 34px; }
+    }
+  </style>
+
   <div class="sugar-gallery-wrap">
     <div class="sugar-gallery-head">
       <div>
@@ -3172,32 +3201,105 @@
 
     <div class="sugar-gallery-grid">
       <figure class="sugar-gallery-item">
-        <img src="assets/hero-item-01.jpg" alt="Detailed autumn nail art" loading="lazy">
+        <img src="assets/gallery-17.webp" alt="Sugar Nails gallery design 1" loading="lazy">
         <figcaption class="sugar-gallery-caption"><strong>Signature Art</strong><span>01 / Details</span></figcaption>
       </figure>
       <figure class="sugar-gallery-item">
-        <img src="assets/service-gelx.jpg" alt="Gel X floral nail design" loading="lazy">
+        <img src="assets/gallery-18.webp" alt="Sugar Nails gallery design 2" loading="lazy">
         <figcaption class="sugar-gallery-caption"><strong>Gel X</strong><span>02 / Style</span></figcaption>
       </figure>
       <figure class="sugar-gallery-item">
-        <img src="assets/service-spa-pedicure.jpg" alt="Relaxing spa pedicure service" loading="lazy">
+        <img src="assets/gallery-19.webp" alt="Sugar Nails gallery design 3" loading="lazy">
         <figcaption class="sugar-gallery-caption"><strong>Spa Care</strong><span>03 / Relax</span></figcaption>
       </figure>
       <figure class="sugar-gallery-item">
-        <img src="assets/service-manicure.jpg" alt="Elegant neutral manicure" loading="lazy">
+        <img src="assets/gallery-20.webp" alt="Sugar Nails gallery design 4" loading="lazy">
         <figcaption class="sugar-gallery-caption"><strong>Manicure</strong><span>04 / Finish</span></figcaption>
       </figure>
       <figure class="sugar-gallery-item">
-        <img src="assets/salon-wide.png" alt="Interior of Sugar Nails salon" loading="lazy">
+        <img src="assets/gallery-21.webp" alt="Sugar Nails gallery design 5" loading="lazy">
         <figcaption class="sugar-gallery-caption"><strong>Our Space</strong><span>05 / Clemson</span></figcaption>
       </figure>
       <figure class="sugar-gallery-item">
-        <img src="assets/service-acrylic.jpg" alt="Glossy acrylic nail set" loading="lazy">
+        <img src="assets/gallery-22.webp" alt="Sugar Nails gallery design 6" loading="lazy">
         <figcaption class="sugar-gallery-caption"><strong>Acrylic</strong><span>06 / Color</span></figcaption>
       </figure>
     </div>
+    <div class="sugar-gallery-lightbox" role="dialog" aria-modal="true" aria-label="Sugar Nails gallery viewer" hidden>
+      <button class="sugar-gallery-lightbox-close" type="button" aria-label="Close gallery">&times;</button>
+      <button class="sugar-gallery-lightbox-nav sugar-gallery-lightbox-prev" type="button" aria-label="Previous image">&#8249;</button>
+      <img class="sugar-gallery-lightbox-image" src="" alt="">
+      <button class="sugar-gallery-lightbox-nav sugar-gallery-lightbox-next" type="button" aria-label="Next image">&#8250;</button>
+      <div class="sugar-gallery-lightbox-count" aria-live="polite"></div>
+    </div>
   </div>
 </section>
+
+<script>
+  (() => {
+    const section = document.querySelector('.sugar-gallery-section');
+    if (!section) return;
+    const items = [...section.querySelectorAll('.sugar-gallery-item')];
+    const lightbox = section.querySelector('.sugar-gallery-lightbox');
+    const image = lightbox.querySelector('.sugar-gallery-lightbox-image');
+    const count = lightbox.querySelector('.sugar-gallery-lightbox-count');
+    const closeButton = lightbox.querySelector('.sugar-gallery-lightbox-close');
+    const previousButton = lightbox.querySelector('.sugar-gallery-lightbox-prev');
+    const nextButton = lightbox.querySelector('.sugar-gallery-lightbox-next');
+    let activeIndex = 0;
+    let lastFocused = null;
+
+    const render = () => {
+      const source = items[activeIndex].querySelector('img');
+      image.src = source.currentSrc || source.src;
+      image.alt = source.alt;
+      count.textContent = String(activeIndex + 1).padStart(2, '0') + ' / ' + String(items.length).padStart(2, '0');
+    };
+    const open = (index) => {
+      activeIndex = index;
+      lastFocused = document.activeElement;
+      render();
+      lightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+      closeButton.focus();
+    };
+    const close = () => {
+      lightbox.hidden = true;
+      image.src = '';
+      document.body.style.overflow = '';
+      if (lastFocused) lastFocused.focus();
+    };
+    const move = (step) => {
+      activeIndex = (activeIndex + step + items.length) % items.length;
+      render();
+    };
+
+    items.forEach((item, index) => {
+      item.tabIndex = 0;
+      item.setAttribute('role', 'button');
+      item.setAttribute('aria-label', 'Open gallery image ' + (index + 1));
+      item.addEventListener('click', () => open(index));
+      item.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          open(index);
+        }
+      });
+    });
+    closeButton.addEventListener('click', close);
+    previousButton.addEventListener('click', () => move(-1));
+    nextButton.addEventListener('click', () => move(1));
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) close();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (lightbox.hidden) return;
+      if (event.key === 'Escape') close();
+      if (event.key === 'ArrowLeft') move(-1);
+      if (event.key === 'ArrowRight') move(1);
+    });
+  })();
+</script>
 
 <section class="lumina-video-section" id="lumina-video">
   <style>
