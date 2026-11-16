@@ -3164,6 +3164,7 @@
   <style>
     .sugar-gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: none; gap: 18px; }
     .sugar-gallery-item:nth-child(n) { display: block; grid-column: auto; grid-row: auto; aspect-ratio: 1 / 1; cursor: zoom-in; }
+    .sugar-gallery-item::after { display: none; }
     .sugar-gallery-item:focus-visible { outline: 3px solid #ea661c; outline-offset: 4px; }
     .sugar-gallery-lightbox[hidden] { display: none; }
     .sugar-gallery-lightbox { position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center; padding: 72px 92px; background: rgba(35, 18, 11, 0.92); backdrop-filter: blur(14px); }
@@ -3202,27 +3203,21 @@
     <div class="sugar-gallery-grid">
       <figure class="sugar-gallery-item">
         <img src="assets/gallery-17.webp" alt="Sugar Nails gallery design 1" loading="lazy">
-        <figcaption class="sugar-gallery-caption"><strong>Signature Art</strong><span>01 / Details</span></figcaption>
       </figure>
       <figure class="sugar-gallery-item">
         <img src="assets/gallery-18.webp" alt="Sugar Nails gallery design 2" loading="lazy">
-        <figcaption class="sugar-gallery-caption"><strong>Gel X</strong><span>02 / Style</span></figcaption>
       </figure>
       <figure class="sugar-gallery-item">
         <img src="assets/gallery-19.webp" alt="Sugar Nails gallery design 3" loading="lazy">
-        <figcaption class="sugar-gallery-caption"><strong>Spa Care</strong><span>03 / Relax</span></figcaption>
       </figure>
       <figure class="sugar-gallery-item">
         <img src="assets/gallery-20.webp" alt="Sugar Nails gallery design 4" loading="lazy">
-        <figcaption class="sugar-gallery-caption"><strong>Manicure</strong><span>04 / Finish</span></figcaption>
       </figure>
       <figure class="sugar-gallery-item">
         <img src="assets/gallery-21.webp" alt="Sugar Nails gallery design 5" loading="lazy">
-        <figcaption class="sugar-gallery-caption"><strong>Our Space</strong><span>05 / Clemson</span></figcaption>
       </figure>
       <figure class="sugar-gallery-item">
         <img src="assets/gallery-22.webp" alt="Sugar Nails gallery design 6" loading="lazy">
-        <figcaption class="sugar-gallery-caption"><strong>Acrylic</strong><span>06 / Color</span></figcaption>
       </figure>
     </div>
     <div class="sugar-gallery-lightbox" role="dialog" aria-modal="true" aria-label="Sugar Nails gallery viewer" hidden>
