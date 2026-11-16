@@ -1,0 +1,12 @@
+{
+  "name": "sugar-nails-clemson",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "serve": "node C:/Users/Admin/.codex/skills/scroll-craft/scripts/serve.mjs --root . --port 4517",
+    "verify": "node C:/Users/Admin/.codex/skills/scroll-craft/scripts/shoot.mjs --url http://localhost:4517 --out lab/shots"
+  },
+  "dependencies": {
+    "playwright-core": "^1.65.1"
+  }
+}

@@ -1,0 +1,4 @@
+node_modules/
+lab/
+*.tar.gz
+.DS_Store
