@@ -228,35 +228,49 @@
         z-index: 10;
         top: calc(100% + 10px);
         right: 0;
-        left: 0;
+        left: auto;
         display: grid;
-        gap: 0;
-        padding: 12px 18px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+        width: min(320px, calc(100vw - 28px));
+        padding: 10px;
         border: 1px solid rgba(255, 234, 200, 0.36);
-        border-radius: 26px;
+        border-radius: 24px;
         background: rgba(50, 36, 26, 0.94);
         box-shadow: 0 22px 50px rgba(35, 20, 12, 0.25);
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-8px);
+        transform: translateY(-6px) scale(0.98);
+        transform-origin: top right;
         transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
       }
 
       .sugar-site-header.is-open .sugar-header-nav {
         opacity: 1;
         visibility: visible;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
 
       .sugar-header-nav a {
-        padding: 14px 4px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        min-height: 46px;
+        padding: 10px 12px;
+        border: 0;
+        border-radius: 14px;
+        text-align: left;
       }
 
-      .sugar-header-nav a:last-child {
-        border-bottom: 0;
+      .sugar-header-nav a:hover,
+      .sugar-header-nav a:focus-visible {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .sugar-header-nav a[aria-current="page"] {
+        color: #fff;
+        background: rgba(234, 102, 28, 0.22);
       }
 
       .sugar-header-nav a::after {
@@ -943,6 +957,223 @@
     }
   </style>
 
+  <link rel="stylesheet" href="services-menu.css">
+
+  <main class="menu-page">
+    <section class="menu-hero" aria-labelledby="menu-title">
+      <div class="menu-hero__art" aria-hidden="true"><span>Services</span></div>
+      <div class="menu-shell menu-hero__inner">
+        <p class="menu-kicker">Sugar Nails Clemson</p>
+        <h1 id="menu-title">Services <em>Menu</em></h1>
+        <p>From polished essentials to a full spa escape, explore every service and find the care that feels just right for you.</p>
+        <a class="menu-button" href="https://sugarnailsofclemson6619.simplepos.us/new-home" target="_blank" rel="noopener">Book now</a>
+      </div>
+    </section>
+
+    <nav class="menu-jump" aria-label="Jump to a service category">
+      <div class="menu-shell menu-jump__track">
+        <span class="menu-jump__progress" aria-hidden="true"></span>
+        <a href="#manicure">Manicure</a>
+        <a href="#pedicure">Pedicure</a>
+        <a href="#acrylic">Acrylic</a>
+        <a href="#gel-x">Gel X</a>
+        <a href="#dip-powder">Dip Powder</a>
+        <a href="#builder-gel">Builder Gel</a>
+        <a href="#tap-hybrid-gel">Tap Hybrid Gel</a>
+        <a href="#kids">Kids</a>
+        <a href="#polish">Polish Change</a>
+        <a href="#add-ons">Add-ons</a>
+      </div>
+    </nav>
+
+    <section class="service-catalog menu-shell" aria-label="Sugar Nails service menu">
+      <article class="service-card" id="manicure" data-menu-card>
+        <figure class="service-card__media">
+          <img src="assets/service-manicure.jpg" alt="Fresh manicure service at Sugar Nails" width="1200" height="900">
+          <figcaption><span>Clean, refined, you</span><strong>Manicure</strong></figcaption>
+        </figure>
+        <div class="service-card__body">
+          <header><h2>Manicure</h2><span class="service-card__number">01</span></header>
+          <p class="service-card__intro">Thoughtful cuticle care, shaping and color for hands that feel as fresh as they look.</p>
+          <dl class="service-list">
+            <div><dt>Regular Manicure</dt><dd>$23</dd></div>
+            <div><dt>Add-On Color</dt><dd>$5</dd></div>
+            <div><dt>Gel Manicure <small>Take-Off $5</small></dt><dd>$38</dd></div>
+            <div><dt>Add-On Take-Off</dt><dd>$5</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="service-card service-card--pedicure" id="pedicure" data-menu-card>
+        <figure class="service-card__media">
+          <img src="assets/service-spa-pedicure.jpg" alt="Relaxing spa pedicure at Sugar Nails" width="1200" height="1500">
+          <figcaption><span>Your time to unwind</span><strong>Spa Pedicure</strong></figcaption>
+        </figure>
+        <div class="service-card__body">
+          <header><h2>Spa Pedicure</h2><span class="service-card__number">02</span></header>
+          <p class="service-card__intro">Six ways to slow down. Every experience is finished with the polish of your choice.</p>
+          <dl class="service-list service-list--detailed">
+            <div><dt>Basic Pedicure <small>A warm mineral salt soak, cuticle care, shaping, heel scrub, sugar scrub, warm towels and a light leg massage.</small></dt><dd><strong>$35</strong><small>with gel $50</small></dd></div>
+            <div><dt>Deluxe Pedicure <small>Basic care plus organic sea salt, exfoliation, a hydrating mask and warm towel wrap.</small></dt><dd><strong>$45</strong><small>with gel $60</small></dd></div>
+            <div><dt>Royal Detox <small>Sea salt and herbs, exfoliation, clay mask, massage, plus paraffin wax or hot stone therapy.</small></dt><dd><strong>$55</strong><small>with gel $70</small></dd></div>
+            <div><dt>Sugar Pedicure <small>Milk &amp; Honey or 24K Gold with full spa care, paraffin wax, hot stones and massage.</small></dt><dd><strong>$65</strong><small>with gel $80</small></dd></div>
+            <div><dt>Volcano Pedicure <small>Hot steam, honey scrub, paraffin wax, hot stones, warm oil massage and herbal neck wrap.</small></dt><dd><strong>$75</strong><small>with gel $90</small></dd></div>
+            <div><dt>Matcha Pedicure <small>A complete matcha ritual with hot steam, paraffin, hot stones, warm oil and extended massage.</small></dt><dd><strong>$85</strong><small>with gel $100</small></dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="service-card" id="acrylic" data-menu-card>
+        <figure class="service-card__media">
+          <img src="assets/service-acrylic.jpg" alt="Acrylic nail enhancements at Sugar Nails" width="1200" height="900">
+          <figcaption><span>Classic structure</span><strong>Acrylic</strong></figcaption>
+        </figure>
+        <div class="service-card__body">
+          <header><h2>Acrylic</h2><span class="service-card__number">03</span></header>
+          <p class="service-card__intro">Build length and shape with a strong, polished foundation.</p>
+          <dl class="service-list">
+            <div><dt>Full Set</dt><dd>$50+</dd></div>
+            <div><dt>Fill</dt><dd>$43+</dd></div>
+            <div><dt>Ombre</dt><dd>$65+</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="service-card" id="gel-x" data-menu-card>
+        <figure class="service-card__media">
+          <img src="assets/service-gelx.jpg" alt="Gel X nail extensions at Sugar Nails" width="1200" height="900">
+          <figcaption><span>Lightweight extension</span><strong>Gel X</strong></figcaption>
+        </figure>
+        <div class="service-card__body">
+          <header><h2>Gel X</h2><span class="service-card__number">04</span></header>
+          <p class="service-card__intro">A lightweight extension with a natural feel and a beautifully smooth finish.</p>
+          <dl class="service-list">
+            <div><dt>Full Set</dt><dd>$60+</dd></div>
+            <div><dt>Fill</dt><dd>$45+</dd></div>
+            <div><dt>Short</dt><dd>$5</dd></div>
+            <div><dt>Medium</dt><dd>$10</dd></div>
+            <div><dt>Long</dt><dd>$15</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="service-card" id="dip-powder" data-menu-card>
+        <figure class="service-card__media">
+          <img src="assets/service-dip-powder.avif" alt="Dip powder nails at Sugar Nails" width="1200" height="900">
+          <figcaption><span>Durable color</span><strong>Dip Powder</strong></figcaption>
+        </figure>
+        <div class="service-card__body">
+          <header><h2>Dip Powder</h2><span class="service-card__number">05</span></header>
+          <p class="service-card__intro">Long-wearing color with a light feel and dependable strength.</p>
+          <dl class="service-list">
+            <div><dt>Dip</dt><dd>$45+</dd></div>
+            <div><dt>Add Tip</dt><dd>$5</dd></div>
+            <div><dt>Dip Ombre</dt><dd>$55+</dd></div>
+            <div><dt>Dip White Tip</dt><dd>$55+</dd></div>
+            <div><dt>Take-Off</dt><dd>$5</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="service-card" id="builder-gel" data-menu-card>
+        <figure class="service-card__media">
+          <img src="assets/service-builder-gel.avif" alt="Builder gel manicure at Sugar Nails" width="1200" height="900">
+          <figcaption><span>Natural reinforcement</span><strong>Builder Gel</strong></figcaption>
+        </figure>
+        <div class="service-card__body">
+          <header><h2>Builder Gel</h2><span class="service-card__number">06</span></header>
+          <p class="service-card__intro">Flexible reinforcement that adds structure while keeping a natural profile.</p>
+          <dl class="service-list">
+            <div><dt>Builder Gel</dt><dd>$55+</dd></div>
+            <div><dt>Builder Fill</dt><dd>$45+</dd></div>
+            <div><dt>Tip Add-On</dt><dd>$5</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="service-card" id="tap-hybrid-gel" data-menu-card>
+        <figure class="service-card__media">
+          <img src="assets/service-tap-hybrid-gel.jpg" alt="Tap hybrid gel nails at Sugar Nails" width="1200" height="900">
+          <figcaption><span>Flexible strength</span><strong>Tap Hybrid Gel</strong></figcaption>
+        </figure>
+        <div class="service-card__body">
+          <header><h2>Tap Hybrid Gel</h2><span class="service-card__number">07</span></header>
+          <p class="service-card__intro">A flexible enhancement designed for strength, comfort and a clean finish.</p>
+          <dl class="service-list">
+            <div><dt>Full Set</dt><dd>$55+</dd></div>
+            <div><dt>Fill</dt><dd>$50+</dd></div>
+            <div><dt>Tip Add-On</dt><dd>$5</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="service-card" id="kids" data-menu-card>
+        <figure class="service-card__media">
+          <img src="assets/service-kids.jpg" alt="Kids nail service at Sugar Nails" width="1200" height="900">
+          <figcaption><span>Ages 1 to 10</span><strong>Little Sweets</strong></figcaption>
+        </figure>
+        <div class="service-card__body">
+          <header><h2>Kids</h2><span class="service-card__number">08</span></header>
+          <p class="service-card__intro">Sweet styles and gentle care for our youngest guests.</p>
+          <dl class="service-list">
+            <div><dt>Pedicure <small>With Gel $43</small></dt><dd>$30</dd></div>
+            <div><dt>Regular Manicure</dt><dd>$18</dd></div>
+            <div><dt>Gel Manicure</dt><dd>$28</dd></div>
+            <div><dt>Polish Change, Hands Regular</dt><dd>$12</dd></div>
+            <div><dt>Polish Change, Toes Regular</dt><dd>$12</dd></div>
+            <div><dt>Polish Change, Hands Gel</dt><dd>$18</dd></div>
+            <div><dt>Polish Change, Toes Gel</dt><dd>$18</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="service-card" id="polish" data-menu-card>
+        <figure class="service-card__media">
+          <img src="assets/service-polish-change.jpg" alt="Polish change service at Sugar Nails" width="1200" height="900">
+          <figcaption><span>A fresh finish</span><strong>Polish Change</strong></figcaption>
+        </figure>
+        <div class="service-card__body">
+          <header><h2>Polish Change</h2><span class="service-card__number">09</span></header>
+          <p class="service-card__intro">A quick color refresh when your nails need a little extra shine.</p>
+          <dl class="service-list">
+            <div><dt>Regular Polish, Hands</dt><dd>$15</dd></div>
+            <div><dt>Regular Polish, Toes</dt><dd>$15</dd></div>
+            <div><dt>Gel Polish, Hands</dt><dd>$25</dd></div>
+            <div><dt>Gel Polish, Toes</dt><dd>$25</dd></div>
+          </dl>
+        </div>
+      </article>
+
+      <article class="service-card" id="add-ons" data-menu-card>
+        <figure class="service-card__media">
+          <img src="assets/service-add-ons.jpg" alt="Nail art and add-on services at Sugar Nails" width="1200" height="1100">
+          <figcaption><span>The finishing touches</span><strong>Add-Ons</strong></figcaption>
+        </figure>
+        <div class="service-card__body">
+          <header><h2>Add-Ons</h2><span class="service-card__number">10</span></header>
+          <p class="service-card__intro">Personalize your service with shape, shine, art and extra care.</p>
+          <dl class="service-list">
+            <div><dt>Manicure Add-On</dt><dd>$10</dd></div>
+            <div><dt>Special Shape</dt><dd>$5</dd></div>
+            <div><dt>Chrome</dt><dd>$10</dd></div>
+            <div><dt>Cat Eye</dt><dd>$10</dd></div>
+            <div><dt>Length</dt><dd>$5+</dd></div>
+            <div><dt>Design Price</dt><dd>Varies</dd></div>
+            <div><dt>Take-Off + Cut Down <small>Dip / Builder / Acrylic / Gel / Gel X</small></dt><dd>$15</dd></div>
+          </dl>
+        </div>
+      </article>
+    </section>
+
+    <aside class="menu-booking menu-shell" aria-label="Book a Sugar Nails appointment">
+      <div><img src="assets/sugar-nails-logo.webp" alt="" width="80" height="80"><p><strong>Ready for something sweet?</strong><span>Choose your favorite service and let us take care of the rest.</span></p></div>
+      <a class="menu-button menu-button--light" href="https://sugarnailsofclemson6619.simplepos.us/new-home" target="_blank" rel="noopener">Book now</a>
+    </aside>
+  </main>
+
+  <script src="services-menu.js" defer></script>
+
+  <div class="legacy-services" hidden>
   <div class="lumina-services-bg-text">Services</div>
 
   <div class="lumina-services-container">
@@ -1045,7 +1276,7 @@
     </div>
   </div>
 
-  <script src="https://unpkg.com/scrollreveal"></script>
+  </div>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
