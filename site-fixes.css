@@ -58,13 +58,6 @@
     font-size: 24px !important;
   }
 
-  .sugar-header-nav a {
-    min-height: 48px;
-    display: flex !important;
-    align-items: center;
-    font-size: 13px !important;
-  }
-
   .lux-nail-slider,
   .lux-nail-slides {
     min-height: max(720px, 100svh) !important;
