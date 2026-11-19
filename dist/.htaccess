@@ -2,6 +2,28 @@ DirectoryIndex index.html
 Options -Indexes
 AddDefaultCharset UTF-8
 
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Keep one HTTPS, non-www URL for every page.
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} ^www\.sugarnailsofclemson\.com$ [NC]
+  RewriteRule ^ https://sugarnailsofclemson.com%{REQUEST_URI} [R=301,L,NE]
+
+  # Preserve the clean URLs already indexed by search engines.
+  RewriteCond %{THE_REQUEST} \s/+index\.html(?:[?\s]) [NC]
+  RewriteRule ^index\.html$ / [R=301,L]
+
+  RewriteCond %{THE_REQUEST} \s/+(.+?)\.html(?:[?\s]) [NC]
+  RewriteRule ^(.+)\.html$ /$1/ [R=301,L,NE]
+
+  # Serve the static HTML files behind their clean public URLs.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^([^/]+)/?$ $1.html [L]
+</IfModule>
+
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
@@ -12,7 +34,7 @@ AddDefaultCharset UTF-8
   </FilesMatch>
 
   <FilesMatch "\.(?:avif|gif|ico|jpe?g|png|svg|webp)$">
-    Header set Cache-Control "public, max-age=2592000"
+    Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
 
   <FilesMatch "\.html$">

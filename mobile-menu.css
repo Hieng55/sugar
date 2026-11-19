@@ -1,0 +1,187 @@
+/* Use the complete brand wordmark in the footer instead of cropping it into a badge. */
+.lumina-footer-brand .lumina-footer-logo {
+  gap: 0;
+}
+
+.lumina-footer-logo .lumina-footer-logo-mark {
+  width: 190px;
+  height: 72px;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.lumina-footer-logo .lumina-footer-logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  background: transparent !important;
+  filter: saturate(1.18) brightness(1.05) contrast(1.06);
+}
+
+.lumina-footer-logo .lumina-footer-logo-text {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .lumina-footer-logo .lumina-footer-logo-mark {
+    width: 156px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 940px) {
+  body:has(.sugar-site-header.is-open) {
+    overflow: hidden;
+  }
+
+  .sugar-site-header .sugar-header-brand,
+  .sugar-site-header .sugar-header-toggle {
+    position: relative;
+    z-index: 20;
+  }
+
+  .sugar-site-header .sugar-header-inner {
+    border-color: rgba(234, 102, 28, 0.24);
+    background: rgba(255, 239, 216, 0.92);
+    box-shadow: 0 14px 36px rgba(53, 24, 13, 0.14);
+  }
+
+  .sugar-site-header .sugar-header-toggle {
+    border-color: rgba(92, 49, 31, 0.3);
+    background: rgba(255, 255, 255, 0.36);
+    color: #5c311f;
+  }
+
+  .sugar-site-header .sugar-header-brand {
+    gap: 0;
+  }
+
+  .sugar-site-header .sugar-header-logo {
+    width: 128px;
+    height: 52px;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    object-fit: contain;
+    object-position: left center;
+    filter: saturate(1.18) brightness(1.05) contrast(1.06);
+  }
+
+  .sugar-site-header .sugar-header-brand-copy {
+    display: none;
+  }
+
+  .sugar-site-header.is-open .sugar-header-brand,
+  .sugar-site-header.is-open .sugar-header-toggle {
+    color: #3a2116;
+  }
+
+  .sugar-site-header.is-open .sugar-header-toggle {
+    border-color: rgba(58, 33, 22, 0.3);
+    background: rgba(255, 255, 255, 0.28);
+  }
+
+  .sugar-site-header.is-open .sugar-header-inner {
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .sugar-site-header .sugar-header-nav {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    align-items: stretch;
+    justify-items: stretch;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+    padding: calc(106px + env(safe-area-inset-top)) clamp(22px, 7vw, 52px) calc(18px + env(safe-area-inset-bottom));
+    overflow: hidden;
+    border: 0;
+    border-radius: 0;
+    background: #f8ecd8;
+    box-shadow: none;
+    counter-reset: sugar-menu-item;
+  }
+
+  .sugar-site-header .sugar-header-nav a {
+    min-height: 0;
+    padding: 0 6px;
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    align-items: center;
+    border: 0;
+    border-bottom: 1px solid rgba(58, 33, 22, 0.14);
+    border-radius: 0;
+    background: transparent;
+    color: #3a2116;
+    font-family: 'Forum', serif;
+    font-size: clamp(27px, 8vw, 38px);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    text-transform: none;
+    counter-increment: sugar-menu-item;
+    transition: color 0.25s ease, padding-left 0.25s ease;
+  }
+
+  .sugar-site-header .sugar-header-nav a:nth-child(odd),
+  .sugar-site-header .sugar-header-nav a:nth-last-child(-n + 2) {
+    border-right: 0;
+    border-bottom: 1px solid rgba(58, 33, 22, 0.14);
+  }
+
+  .sugar-site-header .sugar-header-nav a:last-child {
+    border-bottom: 0;
+  }
+
+  .sugar-site-header .sugar-header-nav a::before {
+    content: "0" counter(sugar-menu-item);
+    color: rgba(58, 33, 22, 0.42);
+    font-family: 'Jost', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+  }
+
+  .sugar-site-header .sugar-header-nav a::after {
+    position: static;
+    display: block;
+    width: 26px;
+    height: 1px;
+    flex: 0 0 auto;
+    margin-left: 14px;
+    border-radius: 0;
+    background: currentColor;
+    opacity: 0.28;
+    transform: none;
+    transition: width 0.25s ease, opacity 0.25s ease;
+  }
+
+  .sugar-site-header .sugar-header-nav a:hover,
+  .sugar-site-header .sugar-header-nav a:focus-visible,
+  .sugar-site-header .sugar-header-nav a[aria-current="page"] {
+    color: #d95c1b;
+    background: transparent;
+    padding-left: 12px;
+  }
+
+  .sugar-site-header .sugar-header-nav a[aria-current="page"]::after {
+    width: 40px;
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sugar-site-header .sugar-header-nav a,
+    .sugar-site-header .sugar-header-nav a::after {
+      transition: none;
+    }
+  }
+}
