@@ -1,0 +1,94 @@
+/* Mobile readability floor: no user-facing copy below 14px. */
+@media (max-width: 767px) {
+  .lux-nail-label,
+  .lux-nail-dot,
+  .lux-nail-btn,
+  .lux-nail-note,
+  .lux-nail-badge span,
+  .lux-signature-copy a,
+  .lux-social-rail a,
+  .miss-about-kicker,
+  .miss-about-btn,
+  .miss-about-location,
+  .miss-about-value span,
+  .lumina-services-kicker,
+  .lumina-services-btn,
+  .lumina-services-info a,
+  .lumina-service-content p,
+  .lumina-video-kicker,
+  .lumina-video-btn,
+  .lumina-video-link,
+  .sugar-gallery-kicker,
+  .menu-kicker,
+  .menu-button,
+  .menu-jump a,
+  .menu-booking span,
+  .service-card__media figcaption span,
+  .service-card__intro,
+  .service-list dt,
+  .service-list dt small,
+  .service-list dd small,
+  .sugar-contact-index,
+  .sugar-contact-kicker,
+  .sugar-contact-hours,
+  .sugar-contact-hours strong,
+  .sugar-contact-address,
+  .sugar-contact-card small,
+  .sugar-contact-social-links a,
+  .sugar-contact-map figcaption span,
+  .sugar-contact-map figcaption a,
+  .lumina-footer-brand p,
+  .lumina-footer-logo-text span,
+  .lumina-footer-socials a,
+  .lumina-footer-links a,
+  .lumina-footer-contact-item,
+  .lumina-footer-hour-row,
+  .lumina-footer-cta p,
+  .lumina-footer-cta-btn,
+  .lumina-footer-bottom {
+    font-size: 14px !important;
+  }
+
+  .lux-nail-label {
+    gap: 8px !important;
+    letter-spacing: 1.4px !important;
+    white-space: nowrap;
+  }
+
+  .lux-nail-label::before {
+    width: 26px !important;
+    flex: 0 0 26px;
+  }
+}
+
+@media (max-width: 340px) {
+  .lux-nail-label {
+    gap: 6px !important;
+    letter-spacing: 0.6px !important;
+  }
+
+  .lux-nail-label::before {
+    width: 18px !important;
+    flex-basis: 18px;
+  }
+}
+
+.social-brand-icon {
+  display: block;
+  width: 22px !important;
+  height: 22px !important;
+  object-fit: contain;
+  background: transparent !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+.lumina-footer-socials a:hover .social-brand-icon,
+.lux-social-rail a:hover .social-brand-icon {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+.site-credit {
+  display: none !important;
+}

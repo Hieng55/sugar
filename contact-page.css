@@ -34,7 +34,7 @@
 .sugar-contact-kicker {
   margin: 0 0 18px;
   color: #d95c1b;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -59,7 +59,7 @@
   max-width: 430px;
   margin: 0 0 8px;
   color: rgba(58, 33, 22, 0.7);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.8;
 }
 
@@ -127,7 +127,7 @@ a.sugar-contact-card-book:focus-visible {
 }
 
 .sugar-contact-index {
-  font-size: 9px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.16em;
   opacity: 0.58;
@@ -136,7 +136,7 @@ a.sugar-contact-card-book:focus-visible {
 .sugar-contact-card-copy small {
   display: block;
   margin-bottom: 8px;
-  font-size: 9px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.18em;
   opacity: 0.62;
@@ -173,16 +173,21 @@ a.sugar-contact-card-book:focus-visible {
 }
 
 .sugar-contact-social-links a {
-  padding: 10px 14px;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  display: grid;
+  place-items: center;
   border: 1px solid rgba(255, 243, 223, 0.28);
   border-radius: 999px;
   color: inherit;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
   text-decoration: none;
-  text-transform: uppercase;
   transition: background 0.25s ease, color 0.25s ease;
+}
+
+.sugar-contact-social-links .social-brand-icon {
+  width: 23px !important;
+  height: 23px !important;
 }
 
 .sugar-contact-social-links a:hover,
@@ -198,7 +203,7 @@ a.sugar-contact-card-book:focus-visible {
 .sugar-contact-address {
   margin: 8px 0 0;
   color: rgba(58, 33, 22, 0.67);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.55;
 }
 
@@ -206,7 +211,7 @@ a.sugar-contact-card-book:focus-visible {
   flex: 0 0 auto;
   margin-left: auto;
   color: rgba(58, 33, 22, 0.64);
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.7;
   text-align: right;
 }
@@ -214,7 +219,7 @@ a.sugar-contact-card-book:focus-visible {
 .sugar-contact-hours strong {
   display: block;
   color: #3a2116;
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -260,7 +265,7 @@ a.sugar-contact-card-book:focus-visible {
 
 .sugar-contact-map figcaption span {
   color: rgba(58, 33, 22, 0.7);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -278,7 +283,7 @@ a.sugar-contact-card-book:focus-visible {
   border-radius: 999px;
   background: #3a2116;
   color: #fff3df;
-  font-size: 9px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-decoration: none;
@@ -286,7 +291,7 @@ a.sugar-contact-card-book:focus-visible {
 }
 
 body.sugar-inner-page[data-page="contact"] > footer .lumina-footer-container {
-  min-height: auto;
+  min-height: auto !important;
   padding-top: 96px !important;
 }
 
@@ -355,10 +360,6 @@ body.sugar-inner-page[data-page="contact"] > footer .lumina-footer-container {
     left: 12px;
     padding: 15px;
     border-radius: 18px;
-  }
-
-  .sugar-contact-map figcaption span {
-    font-size: 10px;
   }
 
   .sugar-contact-map figcaption strong {

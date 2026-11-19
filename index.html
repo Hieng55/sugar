@@ -20,6 +20,7 @@
 <meta name="twitter:image" content="https://sugarnailsofclemson.com/assets/hero-sugar-nails-optimized.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Forum&family=Jost:wght@300;400;500;600;700&display=swap">
 <link rel="preload" as="image" href="assets/hero-bg-01-optimized.webp" type="image/webp" fetchpriority="high">
 <script type="application/ld+json">
 {
@@ -95,6 +96,8 @@
 </script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23ea661c'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="mobile-menu.css">
+<link rel="stylesheet" href="font-floor.css">
+<link rel="stylesheet" href="sugar-loader.css">
 <style>html{scroll-behavior:smooth;background:#ffeac8}body{margin:0;background:#ffeac8;color:#35180d}.lux-signature-mark img,.lumina-footer-logo-mark img{object-fit:contain!important;background:#ffeac8}.sugar-video-image{width:100%;height:100%;object-fit:cover;display:block}.lumina-video-frame .sugar-video-image{position:absolute;inset:0}.lumina-footer-socials a img{width:100%;height:100%;object-fit:contain;background:#ffeac8}.lumina-footer-bg-text{color:rgba(234,102,28,.055)!important}@media(max-width:767px){.lux-scroll-cue{display:none!important}}</style>
 
 <style id="multipage-shell">
@@ -115,7 +118,29 @@
     body.sugar-inner-page[data-page="contact"] > footer .lumina-footer-container { padding-top: 118px !important; }
   }
 </style>
-</head><body class="sugar-home-page" data-page="home">
+</head><body class="sugar-home-page sugar-loader-active" data-page="home">
+<div class="sugar-loader" id="sugarLoader" role="status" aria-live="polite" aria-label="Preparing the Sugar Nails website">
+  <div class="sugar-loader__split sugar-loader__split--left" aria-hidden="true"></div>
+  <div class="sugar-loader__split sugar-loader__split--right" aria-hidden="true"></div>
+  <div class="sugar-loader__liquid" aria-hidden="true"><span></span><span></span></div>
+  <div class="sugar-loader__sparkles" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="sugar-loader__panel">
+    <div class="sugar-loader__orbit" aria-hidden="true">
+      <span class="sugar-loader__ring"></span>
+      <span class="sugar-loader__ring sugar-loader__ring--inner"></span>
+      <div class="sugar-loader__mark"><img src="assets/sugar-nails-logo.webp" alt="" width="160" height="96"></div>
+    </div>
+    <div class="sugar-loader__eyebrow"><span>Sweet on style</span><em></em><span>Gentle on you</span></div>
+    <div class="sugar-loader__title" aria-hidden="true"><span>Sugar</span><span>Nails</span></div>
+    <p class="sugar-loader__tagline">Polished style, gentle care, and a sweet finish made for you.</p>
+    <div class="sugar-loader__progress">
+      <div class="sugar-loader__track" aria-hidden="true"><span></span></div>
+      <small>Preparing your sweet salon experience</small>
+    </div>
+  </div>
+</div>
+<noscript><style>.sugar-loader{display:none!important}body.sugar-loader-active{overflow:auto}</style></noscript>
+<script src="sugar-loader.js" defer></script>
 <header class="sugar-site-header">
   <style>
     .sugar-site-header {
@@ -1616,6 +1641,123 @@
         bottom: 174px;
       }
     }
+
+    .lux-mobile-dock {
+      display: contents;
+    }
+
+    /* Mobile composition: flow content and dock controls without overlap. */
+    @media (max-width: 767px) {
+      .lux-nail-slider,
+      .lux-nail-slides {
+        min-height: max(780px, 100svh);
+        height: max(780px, 100svh);
+      }
+
+      .lux-nail-inner {
+        width: calc(100% - 28px);
+        height: 100%;
+        padding: clamp(116px, 15svh, 136px) 0 210px;
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .lux-nail-slide {
+        transition: none;
+      }
+
+      .lux-nail-dot span {
+        transition: none;
+      }
+
+      .lux-nail-copy {
+        width: 100%;
+        padding: clamp(26px, 4.5svh, 34px) 22px;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(12px, 2svh, 20px);
+      }
+
+      .lux-nail-label,
+      .lux-nail-copy p {
+        margin: 0;
+      }
+
+      .lux-nail-actions {
+        gap: 12px;
+      }
+
+      .lux-nail-note {
+        text-align: center;
+      }
+
+      .lux-nail-slide.is-active .lux-nail-label,
+      .lux-nail-slide.is-active .lux-nail-copy :is(h1, h2),
+      .lux-nail-slide.is-active .lux-nail-copy p,
+      .lux-nail-slide.is-active .lux-nail-actions {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+
+      .lux-mobile-dock {
+        position: absolute;
+        z-index: 16;
+        right: 14px;
+        bottom: calc(18px + env(safe-area-inset-bottom));
+        left: 14px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: stretch;
+        gap: clamp(10px, 1.8svh, 16px);
+      }
+
+      .lux-mobile-dock .lux-nail-signature {
+        position: static;
+        width: 100%;
+        max-width: none;
+        padding: 12px 14px;
+        align-items: center;
+        border-radius: 26px;
+      }
+
+      .lux-mobile-dock .lux-nail-controls {
+        position: static;
+        justify-self: center;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 380px) and (max-height: 700px) {
+      .lux-nail-slider,
+      .lux-nail-slides {
+        min-height: max(640px, 100svh);
+        height: max(640px, 100svh);
+      }
+
+      .lux-nail-inner {
+        padding-top: 110px;
+        padding-bottom: 190px;
+      }
+
+      .lux-nail-copy {
+        padding: 24px 20px;
+        gap: 11px;
+      }
+
+      .lux-nail-copy :is(h1, h2) {
+        font-size: 40px;
+      }
+
+      .lux-nail-copy p {
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .lux-nail-note {
+        display: none;
+      }
+    }
   </style>
 
  <div class="lux-nail-bg-orb orb-one"></div>
@@ -1741,6 +1883,7 @@
   </article>
 </div>
 
+<div class="lux-mobile-dock">
 <div class="lux-nail-signature">
   <div style="overflow:hidden" class="lux-signature-mark">
     <img decoding="async" alt="" src="assets/sugar-nails-logo.webp"/>
@@ -1769,7 +1912,7 @@
     rel="noopener"
     aria-label="Facebook"
   >
-    Fb
+    <img class="social-brand-icon" src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/facebook/default.svg" alt="" width="22" height="22">
   </a>
 
   <a
@@ -1778,7 +1921,7 @@
     rel="noopener"
     aria-label="Instagram"
   >
-    Ig
+    <img class="social-brand-icon" src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/instagram/default.svg" alt="" width="22" height="22">
   </a>
 
   <a
@@ -1787,7 +1930,7 @@
     rel="noopener"
     aria-label="Google"
   >
-    Gg
+    <img class="social-brand-icon" src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/google/default.svg" alt="" width="22" height="22">
   </a>
 </div>
 
@@ -1806,6 +1949,7 @@
     <span></span>
     03
   </button>
+</div>
 </div>
 
 <a href="about.html" class="lux-scroll-cue" aria-label="Go to the About page">
@@ -3204,61 +3348,61 @@
     </div>
 
     <div class="lumina-services-grid">
-      <a href="https://sugarnailsofclemson6619.simplepos.us/new-home" class="lumina-service-card">
+      <a href="services.html#acrylic" class="lumina-service-card">
         <div class="lumina-service-img"><img decoding="async" src="assets/service-acrylic.jpg" alt="Acrylic nail enhancements"></div>
         <span class="lumina-service-arrow">→</span>
         <div class="lumina-service-content"><span class="lumina-service-number">01</span><h3>Acrylic</h3><p>Full Set, Fill and Acrylic Ombre</p></div>
       </a>
 
-      <a href="https://sugarnailsofclemson6619.simplepos.us/new-home" class="lumina-service-card">
+      <a href="services.html#gel-x" class="lumina-service-card">
         <div class="lumina-service-img"><img decoding="async" src="assets/service-gelx.jpg" alt="Gel X nail enhancements"></div>
         <span class="lumina-service-arrow">→</span>
         <div class="lumina-service-content"><span class="lumina-service-number">02</span><h3>Gel X</h3><p>Full Set, Fill and length options</p></div>
       </a>
 
-      <a href="https://sugarnailsofclemson6619.simplepos.us/new-home" class="lumina-service-card">
+      <a href="services.html#dip-powder" class="lumina-service-card">
         <div class="lumina-service-img"><img decoding="async" src="assets/service-dip-powder.avif" alt="Dip powder nails"></div>
         <span class="lumina-service-arrow">→</span>
         <div class="lumina-service-content"><span class="lumina-service-number">03</span><h3>Dip Powder</h3><p>Dip, Ombre, White Tip, Add Tip and Take-Off</p></div>
       </a>
 
-      <a href="https://sugarnailsofclemson6619.simplepos.us/new-home" class="lumina-service-card">
+      <a href="services.html#builder-gel" class="lumina-service-card">
         <div class="lumina-service-img"><img decoding="async" src="assets/service-builder-gel.avif" alt="Builder gel nails"></div>
         <span class="lumina-service-arrow">→</span>
         <div class="lumina-service-content"><span class="lumina-service-number">04</span><h3>Builder Gel</h3><p>Builder Gel, Fill and Tip Add-On</p></div>
       </a>
 
-      <a href="https://sugarnailsofclemson6619.simplepos.us/new-home" class="lumina-service-card">
+      <a href="services.html#tap-hybrid-gel" class="lumina-service-card">
         <div class="lumina-service-img"><img decoding="async" src="assets/service-tap-hybrid-gel.jpg" alt="Tap hybrid gel nails"></div>
         <span class="lumina-service-arrow">→</span>
         <div class="lumina-service-content"><span class="lumina-service-number">05</span><h3>Tap Hybrid Gel</h3><p>Full Set, Fill and Tip Add-On</p></div>
       </a>
 
-      <a href="https://sugarnailsofclemson6619.simplepos.us/new-home" class="lumina-service-card">
+      <a href="services.html#add-ons" class="lumina-service-card">
         <div class="lumina-service-img"><img decoding="async" src="assets/service-add-ons-optimized.webp" alt="Nail service add-ons" loading="lazy"></div>
         <span class="lumina-service-arrow">→</span>
         <div class="lumina-service-content"><span class="lumina-service-number">06</span><h3>Add-Ons</h3><p>Manicure, shapes, chrome, cat eye, length, design and take-off options</p></div>
       </a>
 
-      <a href="https://sugarnailsofclemson6619.simplepos.us/new-home" class="lumina-service-card">
+      <a href="services.html#manicure" class="lumina-service-card">
         <div class="lumina-service-img"><img decoding="async" src="assets/service-manicure.jpg" alt="Manicure services"></div>
         <span class="lumina-service-arrow">→</span>
         <div class="lumina-service-content"><span class="lumina-service-number">07</span><h3>Manicure</h3><p>Regular Manicure, Gel Manicure, Add-On Color and Take-Off</p></div>
       </a>
 
-      <a href="https://sugarnailsofclemson6619.simplepos.us/new-home" class="lumina-service-card">
+      <a href="services.html#pedicure" class="lumina-service-card">
         <div class="lumina-service-img"><img decoding="async" src="assets/service-spa-pedicure.jpg" alt="Spa pedicure service"></div>
         <span class="lumina-service-arrow">→</span>
         <div class="lumina-service-content"><span class="lumina-service-number">08</span><h3>Spa Pedicure</h3><p>Basic, Deluxe, Royal Detox, Sugar, Volcano and Matcha options</p></div>
       </a>
 
-      <a href="https://sugarnailsofclemson6619.simplepos.us/new-home" class="lumina-service-card">
+      <a href="services.html#kids" class="lumina-service-card">
         <div class="lumina-service-img"><img decoding="async" src="assets/service-kids.jpg" alt="Kids nail services for ages one to ten"></div>
         <span class="lumina-service-arrow">→</span>
         <div class="lumina-service-content"><span class="lumina-service-number">09</span><h3>Kids Services</h3><p>Ages 1–10. Pedicure, manicure and polish change options</p></div>
       </a>
 
-      <a href="https://sugarnailsofclemson6619.simplepos.us/new-home" class="lumina-service-card">
+      <a href="services.html#polish" class="lumina-service-card">
         <div class="lumina-service-img"><img decoding="async" src="assets/service-polish-change-optimized.webp" alt="Polish change services" loading="lazy"></div>
         <span class="lumina-service-arrow">→</span>
         <div class="lumina-service-content"><span class="lumina-service-number">10</span><h3>Polish Change</h3><p>Regular or gel polish change for hands or toes</p></div>
@@ -3365,6 +3509,7 @@
         radial-gradient(circle at 90% 10%, rgba(234, 102, 28, 0.11), transparent 27%),
         #ffeac8;
       color: #35180d;
+      font-family: 'Jost', sans-serif;
     }
 
     .sugar-gallery-section * {
@@ -5061,9 +5206,9 @@
         </p>
 
         <div class="lumina-footer-socials" aria-label="Social media links">
-          <a href="https://www.facebook.com/sugarnailsofclemson" target="_blank" rel="noopener" aria-label="Facebook">Fb</a>
-          <a href="https://www.instagram.com/sugarnailsclemson/" target="_blank" rel="noopener" aria-label="Instagram">Ig</a>
-          <a href="https://maps.app.goo.gl/vGYK1HBo8NUvC2ku5" target="_blank" rel="noopener" aria-label="Google Maps">G</a>
+          <a href="https://www.facebook.com/sugarnailsofclemson" target="_blank" rel="noopener" aria-label="Facebook"><img class="social-brand-icon" src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/facebook/default.svg" alt="" width="22" height="22"></a>
+          <a href="https://www.instagram.com/sugarnailsclemson/" target="_blank" rel="noopener" aria-label="Instagram"><img class="social-brand-icon" src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/instagram/default.svg" alt="" width="22" height="22"></a>
+          <a href="https://maps.app.goo.gl/vGYK1HBo8NUvC2ku5" target="_blank" rel="noopener" aria-label="Google Maps"><img class="social-brand-icon" src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/google/default.svg" alt="" width="22" height="22"></a>
         </div>
       </div>
 
@@ -5141,10 +5286,13 @@
 
     <div class="lumina-footer-bottom">
       <div>
-        © <span class="lumina-footer-year"></span> Sugar Nails. All rights reserved. · Designed by
-        <a href="https://tdtransactionsllc.com/" target="_blank" rel="noopener noreferrer">TD Transactions LLC</a>
-        · Developed by
-        <a href="https://webs4v.vn/" target="_blank" rel="noopener noreferrer">Webs4V</a>
+        © <span class="lumina-footer-year"></span> Sugar Nails. All rights reserved.
+        <span class="site-credit" aria-hidden="true">
+          · Designed by
+          <a href="https://tdtransactionsllc.com/" target="_blank" rel="noopener noreferrer">TD Transactions LLC</a>
+          · Developed by
+          <a href="https://webs4v.vn/" target="_blank" rel="noopener noreferrer">Webs4V</a>
+        </span>
       </div>
 
       <div>
