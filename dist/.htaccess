@@ -5,10 +5,11 @@ AddDefaultCharset UTF-8
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # Keep one HTTPS, non-www URL for every page.
+  # Keep one HTTPS, non-www URL for every page. Match every unexpected host
+  # so old aliases cannot send visitors to a different business website.
   RewriteCond %{HTTPS} !=on [OR]
-  RewriteCond %{HTTP_HOST} ^www\.sugarnailsofclemson\.com$ [NC]
-  RewriteRule ^ https://sugarnailsofclemson.com%{REQUEST_URI} [R=301,L,NE]
+  RewriteCond %{HTTP_HOST} !^sugarnailsclemson\.com$ [NC]
+  RewriteRule ^ https://sugarnailsclemson.com%{REQUEST_URI} [R=301,L,NE]
 
   # Preserve the clean URLs already indexed by search engines.
   RewriteCond %{THE_REQUEST} \s/+index\.html(?:[?\s]) [NC]
