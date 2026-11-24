@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "build": "node build-dist.cjs",
     "serve": "node C:/Users/Admin/.codex/skills/scroll-craft/scripts/serve.mjs --root . --port 4517",
     "verify": "node C:/Users/Admin/.codex/skills/scroll-craft/scripts/shoot.mjs --url http://localhost:4517 --out lab/shots",
     "seo:audit": "node seo-audit.cjs"

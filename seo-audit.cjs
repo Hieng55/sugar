@@ -7,6 +7,13 @@ const seenTitles = new Set();
 const seenDescriptions = new Set();
 const seenCanonicals = new Set();
 const errors = [];
+const businessFacts = [
+  '(864) 765-1883',
+  '906 Tiger Blvd #5',
+  '9:00 AM - 7:00 PM',
+  '11:00 AM - 4:00 PM',
+  'sugarnails528@gmail.com',
+];
 
 function matches(html, pattern) {
   return [...html.matchAll(pattern)];
@@ -28,6 +35,9 @@ for (const file of files) {
   if (imagesWithoutAlt.length) errors.push(`${file}: ${imagesWithoutAlt.length} image(s) missing alt`);
   if (/\bhref=["'][^"']+\.html(?:["'#])/i.test(html)) errors.push(`${file}: non-canonical .html internal link`);
   if (/\b(?:src|href)=["'](?:assets\/|mobile-menu\.css|contact-page\.css|services-menu\.)/i.test(html)) errors.push(`${file}: relative deployment asset URL`);
+  for (const fact of businessFacts) {
+    if (!html.includes(fact)) errors.push(`${file}: missing synchronized business info: ${fact}`);
+  }
 
   if (title && seenTitles.has(title)) errors.push(`${file}: duplicate title`);
   if (description && seenDescriptions.has(description)) errors.push(`${file}: duplicate description`);
@@ -48,6 +58,10 @@ for (const file of files) {
 for (const required of ['robots.txt', 'sitemap.xml', '.htaccess']) {
   if (!fs.existsSync(path.join(root, required))) errors.push(`dist/${required}: missing`);
 }
+
+if (!fs.existsSync(path.join(root, 'contact-page.css'))) errors.push('dist/contact-page.css: missing');
+const contactHtml = fs.readFileSync(path.join(root, 'contact.html'), 'utf8');
+if (!contactHtml.includes('href="/contact-page.css"')) errors.push('contact.html: contact stylesheet must use a root-relative URL');
 
 const sitemap = fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8');
 const sitemapUrls = matches(sitemap, /<loc>(.*?)<\/loc>/g).map((match) => match[1]);

@@ -196,6 +196,21 @@ a.sugar-contact-card-book:focus-visible {
   color: #3a2116;
 }
 
+.sugar-contact-email {
+  display: inline-block;
+  margin-top: 18px;
+  color: #fff3df;
+  font-size: 13px;
+  line-height: 1.4;
+  text-decoration-color: rgba(255, 243, 223, 0.45);
+  text-underline-offset: 4px;
+}
+
+.sugar-contact-email:hover,
+.sugar-contact-email:focus-visible {
+  text-decoration-color: currentColor;
+}
+
 .sugar-contact-visit-main {
   min-width: 0;
 }
