@@ -35,6 +35,8 @@ for (const file of files) {
   if (imagesWithoutAlt.length) errors.push(`${file}: ${imagesWithoutAlt.length} image(s) missing alt`);
   if (/\bhref=["'][^"']+\.html(?:["'#])/i.test(html)) errors.push(`${file}: non-canonical .html internal link`);
   if (/\b(?:src|href)=["'](?:assets\/|mobile-menu\.css|contact-page\.css|services-menu\.)/i.test(html)) errors.push(`${file}: relative deployment asset URL`);
+  if (!html.includes('href="/discount-popup.css"')) errors.push(`${file}: missing discount popup stylesheet`);
+  if (!html.includes('src="/discount-popup.js"')) errors.push(`${file}: missing discount popup script`);
   for (const fact of businessFacts) {
     if (!html.includes(fact)) errors.push(`${file}: missing synchronized business info: ${fact}`);
   }
@@ -59,7 +61,9 @@ for (const required of ['robots.txt', 'sitemap.xml', '.htaccess']) {
   if (!fs.existsSync(path.join(root, required))) errors.push(`dist/${required}: missing`);
 }
 
-if (!fs.existsSync(path.join(root, 'contact-page.css'))) errors.push('dist/contact-page.css: missing');
+for (const asset of ['contact-page.css', 'discount-popup.css', 'discount-popup.js', 'assets/sugar-nails-discount-poster.webp']) {
+  if (!fs.existsSync(path.join(root, asset))) errors.push(`dist/${asset}: missing`);
+}
 const contactHtml = fs.readFileSync(path.join(root, 'contact.html'), 'utf8');
 if (!contactHtml.includes('href="/contact-page.css"')) errors.push('contact.html: contact stylesheet must use a root-relative URL');
 

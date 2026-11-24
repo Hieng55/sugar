@@ -14,6 +14,8 @@ const routes = {
 };
 const sharedFiles = [
   'contact-page.css',
+  'discount-popup.css',
+  'discount-popup.js',
   'font-floor.css',
   'mobile-menu.css',
   'robots.txt',
