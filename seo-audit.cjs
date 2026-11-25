@@ -36,7 +36,7 @@ for (const file of files) {
   if (/\bhref=["'][^"']+\.html(?:["'#])/i.test(html)) errors.push(`${file}: non-canonical .html internal link`);
   if (/\b(?:src|href)=["'](?:assets\/|mobile-menu\.css|contact-page\.css|services-menu\.)/i.test(html)) errors.push(`${file}: relative deployment asset URL`);
   if (!html.includes('href="/discount-popup.css"')) errors.push(`${file}: missing discount popup stylesheet`);
-  if (!html.includes('src="/discount-popup.js"')) errors.push(`${file}: missing discount popup script`);
+  if (!/src=["']\/discount-popup\.js(?:\?[^"']*)?["']/i.test(html)) errors.push(`${file}: missing discount popup script`);
   for (const fact of businessFacts) {
     if (!html.includes(fact)) errors.push(`${file}: missing synchronized business info: ${fact}`);
   }
