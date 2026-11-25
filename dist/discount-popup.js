@@ -14,7 +14,7 @@
         <button class="sugar-discount-popup__close" type="button" aria-label="Close discount offers">&times;</button>
         <img
           class="sugar-discount-popup__image"
-          src="/assets/sugar-nails-discount-poster.webp"
+          src="/assets/sugar-nails-discount-poster.webp?v=20261125"
           alt="Sugar Nails discounts: 10 percent student discount on services over 30 dollars with valid student ID, 15 percent student birthday discount, and 10 percent local customer birthday discount."
           width="1254"
           height="1254"
